@@ -10,7 +10,6 @@ from main.app.core.wiki_scraper import wiki_scraper
 class Test_WikiScraper(unittest.TestCase):
     """
     These end-to-end tests are only for the wiki_scraper function in the wiki_scraper module.
-    Feel free to add your own test cases as you run into edge cases.
     """
 
     def setUp(self):

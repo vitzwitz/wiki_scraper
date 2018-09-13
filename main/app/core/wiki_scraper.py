@@ -1,17 +1,3 @@
-"""
-Instructions:
-    1. Write a python module that correctly satisfies the specs in the test_wiki_scraper.py module
-    2. Write a bash script that executes the tests and exports the test results to an xunit file
-    3. Employ as many best practices as you find appropriate
-
-To get started:
-    1. Install nose from the requirements.txt file using 'pip install -r requirements.txt'
-    2. Run the unit tests by running 'nosetests' from inside the 'wiki_scraper' path
-
-Good luck!
-"""
-
-
 from logging import warning, getLogger, INFO
 from bs4 import BeautifulSoup as bs, element as ele
 from main.app.helpers import data_manipulator as dm, connector as cn, data_traversing as dt

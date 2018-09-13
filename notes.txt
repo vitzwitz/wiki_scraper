@@ -1,6 +1,7 @@
 1. How to run test:
         a. Move into project directory (wiki_scraper)
-        b. bash bin/test_runner.sh
+        b. Install nose from the requirements.txt file using 'pip install -r requirements.txt'
+        c. Run bash bin/test_runner.sh
 
 2. Decisions I made:
         a. Do not scrape the Main page
