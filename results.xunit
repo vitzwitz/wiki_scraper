@@ -1,0 +1,88 @@
+INFO:root:Article retrieved: '1' with a time of: 0:00:00.028917
+INFO:root:Wiki Scraper successfully scraped '1'
+
+.INFO:root:Article retrieved: 'Apple Inc.' with a time of: 0:00:00.076127
+INFO:root:Wiki Scraper successfully scraped 'Apple_Inc'
+
+.INFO:root:Article retrieved: 'Ball (association football)' with a time of: 0:00:00.033290
+INFO:root:Wiki Scraper successfully scraped 'Ball_(association_football)'
+
+.INFO:root:Article retrieved: 'Byte' with a time of: 0:00:00.029739
+INFO:root:Wiki Scraper successfully scraped 'Byte' as bytes
+
+.INFO:root:Article retrieved: 'Cupertino, California' with a time of: 0:00:00.061088
+INFO:root:Wiki Scraper successfully scraped 'Cupertino,_California'
+
+.INFO:root:Article retrieved: 'Football (disambiguation)' with a time of: 0:00:00.032633
+INFO:root:Redirecting to Wikipedia page: 'Football'...
+INFO:root:Article retrieved: 'Football' with a time of: 0:00:00.033026
+INFO:root:Wiki Scraper successfully scraped 'Football_(disambiguation)'
+
+.INFO:root:Article retrieved: 'IPod' with a time of: 0:00:00.033211
+INFO:root:Wiki Scraper successfully scraped 'IPod'
+
+.INFO:root:Article retrieved: 'Ipad' with a time of: 0:00:00.035245
+INFO:root:Wiki Scraper successfully scraped 'Ipad'
+
+.INFO:root:Article retrieved: 'Joker' with a time of: 0:00:00.031591
+INFO:root:Redirecting to Wikipedia page: 'Joker_(playing_card)'...
+INFO:root:Article retrieved: 'Joker (playing card)' with a time of: 0:00:00.031302
+INFO:root:Wiki Scraper successfully scraped 'Joker'
+
+.INFO:root:Article retrieved: 'Main Page' with a time of: 0:00:00.035953
+INFO:root:Wiki Scraper 'successfully' failed to scrape 'Main_Page'
+
+.INFO:root:Article retrieved: 'Mercury' with a time of: 0:00:00.032061
+INFO:root:Redirecting to Wikipedia page: 'Mercury_(element)'...
+INFO:root:Article retrieved: 'Mercury (element)' with a time of: 0:00:00.034706
+INFO:root:Wiki Scraper successfully scraped 'Mercury'
+
+.INFO:root:Article retrieved: 'National Trust for Places of Historic Interest or Natural Beauty' with a time of: 0:00:00.031063
+INFO:root:Wiki Scraper successfully scraped 'National_Trust_for_places_of_historic_Interest_Or_Natural_Beauty'
+
+.INFO:root:Wiki Scraper 'successfully' failed to scrape 'Wikipedia:Article_titles'
+
+.INFO:root:Article retrieved: 'alice coltrane' with a time of: 0:00:00.035194
+INFO:root:Wiki Scraper successfully scraped 'alice coltrane'
+
+.INFO:root:Article retrieved: '501(c)(3) organization' with a time of: 0:00:00.031597
+INFO:root:Wiki Scraper successfully scraped '501(c)(3)_organization'
+
+.INFO:root:Article retrieved: 'Curaçao' with a time of: 0:00:00.034050
+INFO:root:Wiki Scraper successfully scraped u'Curaçao'
+
+.INFO:root:Article retrieved: 'fake article' with a time of: 0:00:00.033220
+INFO:root:Wiki Scraper successfully scraped 'fake_article'
+
+.INFO:root:Article retrieved: 'fakethis' with a time of: 0:00:00.365593
+INFO:root:Wiki Scraper 'successfully' failed to scrape 'fakethis'
+
+.INFO:root:Article retrieved: 'main' with a time of: 0:00:00.030758
+INFO:root:Redirecting to Wikipedia page: 'Main_River_(disambiguation)'...
+INFO:root:Article retrieved: 'Main River (disambiguation)' with a time of: 0:00:00.028151
+INFO:root:Redirecting to Wikipedia page: 'Main_River'...
+INFO:root:Article retrieved: 'Main River' with a time of: 0:00:00.031822
+INFO:root:Wiki Scraper successfully scraped 'main'
+
+.INFO:root:Article retrieved: 'Orange' with a time of: 0:00:00.028519
+INFO:root:Redirecting to Wikipedia page: 'Orange_(colour)'...
+INFO:root:Article retrieved: 'Orange (colour)' with a time of: 0:00:00.032745
+INFO:root:Wiki Scraper successfully scraped 'Orange'
+
+.INFO:root:Article retrieved: 'r' with a time of: 0:00:00.028838
+INFO:root:Wiki Scraper successfully scraped 'r'
+
+.INFO:root:Article retrieved: 'Science' with a time of: 0:00:00.028296
+INFO:root:Wiki Scraper successfully scraped 'Science'
+
+.INFO:root:Article retrieved: 'Secondary Color' with a time of: 0:00:00.031637
+INFO:root:Wiki Scraper successfully scraped 'Secondary_Color'
+
+.INFO:root:Article retrieved: 'wiki' with a time of: 0:00:00.029339
+INFO:root:Wiki Scraper successfully scraped 'wiki'
+
+.
+----------------------------------------------------------------------
+Ran 24 tests in 12.113s
+
+OK

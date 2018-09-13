@@ -1,0 +1,80 @@
+1. How to run test:
+        a. Move into project directory (wiki_scraper)
+        b. bash bin/test_runner.sh
+
+2. Decisions I made:
+        a. Do not scrape the Main page
+            i. Reason: Its content contains other page's content and references to other pages and one specification is to avoid collecting Help pages
+            ii. Concern: Could be considered until basic requirements and technically contains some type of content
+        b. Scrapes only article pages (no Help, Project, etc pages)
+            i. Reason: Should only refer to pages with content that applies to the public; not just Wikipedia itself
+            ii. See Note 1.a.ii
+        c. Throws error if there is no article found (regardless of what case the page name is in)
+            i. Reason: Should only scrape legitimate pages (except main page)
+        d. Looks for first paragraph with actual text and that contains either its title
+            i. Reason: What HTML considers a paragraph is different from what the English language does and it makes more sense to grab *content* from what the English language considers as the first paragraph
+            ii. Note: Title can exist anywhere in the paragraph, but scraper prefers if title is in bold
+                A. Exception 1: If page contains parentheses, it will search for a link with the text inside said parentheses (unless the word is ambiguous)
+                B. Exception 2: Scraper does not need to '(disambiguation)' if it exists in a title
+                C. Exception 3: If title contains a comma, only first word needs to be in bold. The rest can be anywhere (refer to Note 1.j)
+            iii. Concern: Title could contain general words that will lead the scraper to the wrong paragraph
+        e. Input can contain special characters, hyphens, and commas
+            i. Reason: They are still refer to legitimate pages
+        f. Input can be bytes and will be converted to string
+            i. Reason: Pre-requisite stated unicode was valid
+            ii. Concern: Python 3 does not need to convert unicode, but Python 2+ does and both need to convert bytes.
+        g. I utilized Wikipedia's query param: 'search' to ensure input was case insensitive
+            i. Reason: It works, but maybe scraping something else won't work the same. In that case, I would suggest either of the following:
+                    1. Trying different versions of the input by changing the case of the word until a result is found. I did not choose this method because it seemed inefficient (i.e. input with many words) and might not obtain the first legitimate page (because of the cases chosen first).
+                    2. Page will land on the generic 'no article exists' page, then the scraper will redirect to search page for input. It will look for the first article suggest and then redirect to it. If no article suggestions found, throws error
+        h. Input cannot contain entire link.
+            i. Reason: It is a wiki scraper. Input should reflect on what's inside of wikipedia, not just search for a random url.
+        i. I used BeautifulSoup4 to help parse Wikipedia's html code
+            i. Reason: Wikipedia uses simple html code. However, a scraper for something with more complex code, it could use Selenium
+        j. Pages that have titles with commas will search for the first word (before a comma) in bold then looks for the rest anywhere in the same paragraph
+            i. Reasons: Tends to occur for pages for cities and the rest of the title helps specify which city
+            ii. Concern: See Note 1.d.iii
+        k. Input can be string, unicode, and bytes only
+
+3. Some of the test cases given have the incorrect actual links. The html code on the actual page is different from
+    what existed inside the tests:
+        a. Orange:
+            i. Given:
+                "https://en.wikipedia.org/wiki/Colour"
+                "https://en.wikipedia.org/wiki/Red"
+                "https://en.wikipedia.org/wiki/Yellow"
+                "https://en.wikipedia.org/wiki/Spectrum_of_light"
+                "https://en.wikipedia.org/wiki/Colour_wheel"
+                "https://en.wikipedia.org/wiki/Orange_(fruit)"
+            ii. On page:
+                'https://en.wikipedia.org/wiki/Color'
+                'https://en.wikipedia.org/wiki/Yellow'
+                'https://en.wikipedia.org/wiki/Red'
+                'https://en.wikipedia.org/wiki/Optical_spectrum'
+                'https://en.wikipedia.org/wiki/Visible_light'
+                'https://en.wikipedia.org/wiki/Human_eyes'
+                'https://en.wikipedia.org/wiki/Dominant_wavelength'
+                'https://en.wikipedia.org/wiki/Nanometre'
+                'https://en.wikipedia.org/wiki/Color_theory'
+                'https://en.wikipedia.org/wiki/Orange_(fruit)'
+        b. Curaçao:
+            i. Given:
+                "https://en.wikipedia.org/wiki/Dutch_language"
+                "https://en.wikipedia.org/wiki/Papiamentu"
+                "https://en.wikipedia.org/wiki/Lesser_Antilles"
+                "https://en.wikipedia.org/wiki/Island"
+                "https://en.wikipedia.org/wiki/Country"
+                "https://en.wikipedia.org/wiki/Caribbean_Sea"
+                "https://en.wikipedia.org/wiki/Dutch_Caribbean"
+                "https://en.wikipedia.org/wiki/Venezuela"
+                "https://en.wikipedia.org/wiki/Countries_of_the_Kingdom_of_the_Netherlands"
+                "https://en.wikipedia.org/wiki/Kingdom_of_the_Netherlands"
+            ii. On page:
+                'https://en.wikipedia.org/wiki/Dutch_language' 
+                'https://en.wikipedia.org/wiki/Papiamento_language' 
+                'https://en.wikipedia.org/wiki/Lesser_Antilles'
+                'https://en.wikipedia.org/wiki/Island'
+                'https://en.wikipedia.org/wiki/Caribbean_Sea'
+                'https://en.wikipedia.org/wiki/Dutch_Caribbean' 
+                'https://en.wikipedia.org/wiki/Venezuela' 
+                'https://en.wikipedia.org/wiki/Kingdom_of_the_Netherlands'
